@@ -29,9 +29,9 @@ class TropicalLandingApp {
     document.getElementById('nav-cart-btn')?.addEventListener('click', openDrawer);
     document.getElementById('btn-header-order-online')?.addEventListener('click', openDrawer);
     document.getElementById('btn-order-ahead')?.addEventListener('click', openDrawer);
-    document.getElementById('btn-our-menu')?.addEventListener('click', openDrawer);
     document.getElementById('btn-start-pickup')?.addEventListener('click', openDrawer);
     document.getElementById('btn-location-start-order')?.addEventListener('click', openDrawer);
+    document.getElementById('btn-location-start-order-menu')?.addEventListener('click', openDrawer);
     
     document.getElementById('btn-subscribe')?.addEventListener('click', () => {
       const email = prompt("Enter your email address to join The Tropical Coffee House eClub:", "neighbor@cleveland.com");
@@ -47,15 +47,7 @@ class TropicalLandingApp {
     });
 
     document.getElementById('btn-buy-bag')?.addEventListener('click', () => {
-      this.quickAdd('Buckeye Roast Whole Bean 12oz', 14.00);
-      openDrawer();
-    });
-    document.getElementById('btn-view-bakery')?.addEventListener('click', () => {
-      this.quickAdd('Hunny Bunny Bakery Pastry', 3.75);
-      openDrawer();
-    });
-    document.getElementById('btn-order-bakery')?.addEventListener('click', () => {
-      this.quickAdd('Hunny Bunny Bakery Pastry', 3.75);
+      this.quickAdd('12 oz Coffee Bag', 14.00);
       openDrawer();
     });
 
@@ -66,6 +58,10 @@ class TropicalLandingApp {
   quickAdd(title, price) {
     this.cart.push({ title, price });
     this.updateCartUI();
+
+    // Auto open drawer to give feedback
+    document.getElementById('drawer-overlay')?.classList.add('active');
+    document.getElementById('cart-drawer')?.classList.add('open');
   }
 
   removeFromCart(index) {
@@ -99,7 +95,7 @@ class TropicalLandingApp {
             <strong>${item.title}</strong>
             <div style="color:var(--text-eyebrow); font-size:0.8rem;">$${item.price.toFixed(2)}</div>
           </div>
-          <button onclick="app.removeFromCart(${idx})" style="color:var(--text-eyebrow); font-weight:700; font-size:1.1rem; padding:0.2rem 0.5rem;">&times;</button>
+          <button onclick="app.removeFromCart(${idx})" style="color:var(--text-eyebrow); font-weight:700; font-size:1.1rem; padding:0.2rem 0.5rem; border:none; background:transparent; cursor:pointer;">&times;</button>
         </div>
       `;
     }).join('');

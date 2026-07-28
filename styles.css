@@ -13,10 +13,11 @@
   --bg-btn-dark: #3D2622;
   --bg-medium-brown: #4D3733;
   --bg-copper: #B8683C;
+  --bg-keke-active: #FFF4E5;
 
-  --text-dark: #332420;
+  --text-dark: #222222;
   --text-eyebrow: #8C4328;
-  --text-body: #554440;
+  --text-body: #444444;
   --text-light: #FFFFFF;
   --text-muted-light: #E2D7CF;
 
@@ -24,7 +25,9 @@
   --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -45,10 +48,14 @@ body {
 }
 
 .container {
-  width: 90%;
-  max-width: 1240px;
+  width: 92%;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* HEADER & NAVBAR - NON-STICKY RELATIVE POSITION */
@@ -95,7 +102,8 @@ body {
   text-decoration: none;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--text-eyebrow);
 }
 
@@ -131,7 +139,7 @@ body {
   justify-content: center;
 }
 
-/* HERO SECTION */
+/* HERO SECTION - CLEAN COFFEE CUP & WATERMARK SEAL */
 .hero-exact {
   position: relative;
   background: var(--bg-white);
@@ -237,21 +245,24 @@ body {
 .hero-cup-wrap {
   position: relative;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-cup-wrap img {
-  max-width: 460px;
+  max-width: 480px;
   width: 100%;
   height: auto;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.12));
 }
 
 .watermark-seal {
   position: absolute;
   top: 50%;
-  right: -60px;
+  right: -40px;
   transform: translateY(-50%);
   width: 480px;
   height: 480px;
@@ -404,27 +415,22 @@ body {
   color: var(--text-eyebrow);
 }
 
-/* SECTION 3: GRAB A BAG OF OUR BEST BREW - TRANSPARENT BAG & INCREASED SIZE */
+/* SECTION 3: GRAB A BAG OF OUR BEST BREW - ATTACHED BACKGROUND MATCH */
 .section-medium {
-  background-color: var(--bg-medium-brown);
+  background-color: #533935;
+  background-image: url('images/section3_beans_bg.png');
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
   color: var(--text-light);
-  padding: 5rem 0;
+  padding: 5.5rem 0;
   position: relative;
   overflow: hidden;
 }
 
 .beans-pattern-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 2px, transparent 2px),
-                    radial-gradient(circle, rgba(255,255,255,0.04) 3px, transparent 3px);
-  background-size: 40px 40px, 80px 80px;
-  background-position: 0 0, 20px 20px;
-  opacity: 0.7;
-  pointer-events: none;
+  display: none;
+  /* Replaced by section3_beans_bg.png image */
 }
 
 .section-medium-grid {
@@ -502,11 +508,11 @@ body {
   background: #A0552D;
 }
 
-/* SECTION 4: BAKERY & FRESH TREATS */
+/* SECTION 4: BAKERY & FRESH TREATS - LARGE MUFFIN OVERFLOW & RESPONSIVE GRID */
 .section-cream {
   background-color: #FAF7F2;
   color: var(--text-dark);
-  padding: 6rem 0;
+  padding: 5.5rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -524,11 +530,19 @@ body {
 
 .section-cream-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
   position: relative;
   z-index: 2;
+  min-height: 480px;
+}
+
+.section-cream-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
 }
 
 .bakery-eyebrow {
@@ -556,11 +570,270 @@ body {
   max-width: 490px;
 }
 
+/* BIGGER MUFFIN ON THE RIGHT WITHOUT SHIFTING DOWN OR BREAKING RESPONSIVE */
 .muffin-splash-img {
-  max-width: 480px;
-  width: 100%;
+  max-width: 620px;
+  width: 130%;
   height: auto;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15));
+  transform: scale(1.2) translateX(8%);
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.18));
+  transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
+   1:1 SCREENSHOT REPLICA MENU LAYOUT (menu.html)
+   ========================================================================== */
+.menu-keke-layout {
+  background: #FFFFFF;
+  padding: 3.5rem 0 6rem;
+  min-height: 85vh;
+}
+
+.menu-keke-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* LEFT SIDEBAR CATEGORY LIST - CLEAN/LIGHTER FONT WEIGHT */
+.keke-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.keke-cat-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.keke-cat-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #332420;
+  font-weight: 600;
+  /* Less heavy font weight */
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  padding: 0.7rem 1.1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.keke-cat-btn:hover {
+  color: var(--bg-copper);
+}
+
+.keke-cat-btn.active {
+  background: var(--bg-keke-active);
+  /* Soft light cream highlight block */
+  color: #332420;
+  font-weight: 700;
+}
+
+/* RIGHT TOP CONTROL BAR (SEARCH & FILTERS) */
+.keke-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.keke-search-wrapper {
+  position: relative;
+  width: 320px;
+}
+
+.keke-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+.keke-search-input {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  color: #222222;
+  outline: none;
+  background: #FFFFFF;
+  transition: border-color 0.2s ease;
+}
+
+.keke-search-input:focus {
+  border-color: #333333;
+}
+
+.keke-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  color: #222222;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.keke-filters-btn:hover {
+  border-color: #333333;
+}
+
+/* 4 CARDS PER ROW GRID WITH EXACT 285x224 ASPECT-RATIO PLACEHOLDERS */
+.keke-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+}
+
+.keke-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+.keke-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 285 / 224;
+  /* Exact aspect ratio matching user's 285x224 AVIF images! */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #EFF3EF;
+  position: relative;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keke-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Fits 100% cleanly inside 285x224 wrapper! */
+  transition: transform 0.3s ease;
+}
+
+.keke-card:hover .keke-card-img {
+  transform: scale(1.04);
+}
+
+.keke-placeholder-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 0.4rem;
+  color: #667766;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #E6EAE6;
+  width: 100%;
+}
+
+.keke-placeholder-overlay i {
+  font-size: 2rem;
+  color: #556655;
+  opacity: 0.8;
+}
+
+.keke-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.keke-badge-new {
+  background: #D85A28;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.65rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.keke-item-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  /* Smaller minimalist font */
+  color: #222222;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+.keke-cal-subtext {
+  font-style: italic;
+  font-size: 0.76rem;
+  /* Smaller calorie text */
+  color: #667766;
+  margin-bottom: 0.4rem;
+}
+
+.keke-item-desc {
+  font-size: 0.8rem;
+  /* Minimalist lighter body font */
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
+}
+
+.keke-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.keke-item-price {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #222222;
+}
+
+.keke-add-btn {
+  background: transparent;
+  color: #332420;
+  border: 1px solid #CCCCCC;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.keke-add-btn:hover {
+  background: #332420;
+  color: #FFFFFF;
+  border-color: #332420;
 }
 
 /* LOCATION SECTION - BURGUNDY / WINE COFFEE VIBE */
@@ -605,8 +878,13 @@ body {
 }
 
 @keyframes spinSeal {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .location-headline {
@@ -858,7 +1136,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
   z-index: 1000;
   display: none;
@@ -878,7 +1156,7 @@ body {
   background: var(--bg-cream);
   color: var(--text-dark);
   z-index: 1001;
-  box-shadow: -5px 0 25px rgba(0,0,0,0.4);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
   transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
@@ -909,21 +1187,115 @@ body {
   border-top: 1px solid #D6C9BE;
 }
 
-@media (max-width: 992px) {
-  .section-dark-grid, .section-medium-grid, .section-cream-grid, .footer-top-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1200px) {
+  .keke-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
+
+@media (max-width: 992px) {
+  .hero-exact-grid,
+  .section-dark-grid,
+  .section-medium-grid,
+  .section-cream-grid,
+  .footer-top-grid,
+  .menu-keke-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-exact-grid {
+    gap: 2.5rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-btn-row {
+    justify-content: center;
+  }
+
+  .hero-cup-wrap {
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+  }
+
+  .hero-cup-wrap img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    transform: none;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .watermark-seal {
+    width: 320px;
+    height: 320px;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+
+  .section-cream-grid {
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .section-cream-right {
+    justify-content: center;
+  }
+
+  .muffin-splash-img {
+    max-width: 440px;
+    width: 100%;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .keke-sidebar {
+    position: relative;
+    top: 0;
+  }
+
   .featured-card-wrapper {
     margin-top: 2rem;
   }
+
   .hero-headline {
     font-size: 2.6rem;
   }
+
   .nav-menu {
     display: none;
   }
+
   .footer-bottom-row {
     flex-direction: column;
     text-align: center;
+  }
+
+  .keke-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-cup-wrap {
+    max-width: 300px;
+  }
+  .watermark-seal {
+    width: 260px;
+    height: 260px;
+  }
+  .keke-cards-grid {
+    grid-template-columns: 1fr;
   }
 }

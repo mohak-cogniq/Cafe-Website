@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Menu | The Tropical Coffee House</title>
+  <meta name="description" content="Explore the full menu at The Tropical Coffee House in Cleveland, OH. Handcrafted lattes, cold brews, fresh pastries, roasted beans, and merch.">
+  
+  <!-- FontAwesome & Custom Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SITE HEADER - NON-STICKY RELATIVE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-emblem">
+        <img src="images/tropical_logo.png" alt="The Tropical Coffee House Logo" class="header-logo-img">
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">HOME</a></li>
+        <li><a href="menu.html" class="nav-link active">FULL MENU</a></li>
+        <li><a href="index.html#bakery" class="nav-link">BAKERY</a></li>
+        <li><a href="index.html#location" class="nav-link">HOURS &amp; LOCATION</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="btn-exact btn-outline-dark" id="btn-header-order-online" style="padding: 0.5rem 1.1rem; font-size: 0.8rem; text-transform: uppercase;">ORDER ONLINE</button>
+        <button class="cart-btn-nav" id="nav-cart-btn" aria-label="Open Order Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cart-badge-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1:1 SCREENSHOT REPLICA MENU LAYOUT -->
+  <main class="menu-keke-layout">
+    <div class="container menu-keke-grid">
+      
+      <!-- LEFT SIDEBAR CATEGORIES -->
+      <aside class="keke-sidebar">
+        <ul class="keke-cat-list">
+          <li><button class="keke-cat-btn active" data-filter="coffee">ESPRESSO &amp; COFFEE</button></li>
+          <li><button class="keke-cat-btn" data-filter="cold">COLD DRINKS &amp; TEA</button></li>
+          <li><button class="keke-cat-btn" data-filter="bakery">PASTRIES &amp; BITES</button></li>
+          <li><button class="keke-cat-btn" data-filter="beans">ROASTED BEANS</button></li>
+          <li><button class="keke-cat-btn" data-filter="merch">MERCHANDISE &amp; GIFTS</button></li>
+          <li><button class="keke-cat-btn" data-filter="all">ALL ITEMS</button></li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT CONTENT AREA (TOP CONTROL BAR + 4-CARDS GRID) -->
+      <section class="keke-content">
+        
+        <!-- TOP CONTROL BAR (SEARCH INPUT & FILTERS BUTTON) -->
+        <div class="keke-top-bar">
+          <div class="keke-search-wrapper">
+            <i class="fa-solid fa-magnifying-glass keke-search-icon"></i>
+            <input type="text" id="menu-search-input" placeholder="Search" class="keke-search-input">
+          </div>
+
+          <button class="keke-filters-btn" id="toggle-filters-btn">
+            <i class="fa-solid fa-sliders"></i> Filters
+          </button>
+        </div>
+
+        <!-- MENU CARDS GRID (4 CARDS PER ROW MATCHING SCREENSHOT) -->
+        <div class="keke-cards-grid">
+          
+          <!-- ITEM 1: Latte -->
+          <div class="keke-card" data-category="coffee" data-name="latte">
+            <div class="keke-card-img-wrap">
+              <img src="images/latte_art_cup.png" alt="Latte" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <span class="keke-badge-new">NEW</span>
+              <h4 class="keke-item-title">LATTE</h4>
+            </div>
+            <div class="keke-cal-subtext">180 cal</div>
+            <p class="keke-item-desc">Rich espresso poured over silky steamed milk with customizable syrups.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$5.00 – $6.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Handcrafted Latte', 5.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 2: Espresso Shot -->
+          <div class="keke-card" data-category="coffee" data-name="espresso shot">
+            <div class="keke-card-img-wrap">
+              <img src="images/espresso shot.avif" alt="Espresso Shot" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <span class="keke-badge-new">NEW</span>
+              <h4 class="keke-item-title">ESPRESSO SHOT</h4>
+            </div>
+            <div class="keke-cal-subtext">5 cal</div>
+            <p class="keke-item-desc">Double shot of our signature roasted beans with rich crema.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$3.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Espresso Shot', 3.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 3: Farmers Market Coffee -->
+          <div class="keke-card" data-category="coffee" data-name="farmers market coffee">
+            <div class="keke-card-img-wrap">
+              <img src="images/fresh market coffee.avif" alt="Farmers Market Coffee" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <span class="keke-badge-new">NEW</span>
+              <h4 class="keke-item-title">FARMERS MARKET COFFEE</h4>
+            </div>
+            <div class="keke-cal-subtext">10 cal</div>
+            <p class="keke-item-desc">Freshly dripped house roast coffee, smooth and balanced for your morning.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$2.78</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Farmers Market Coffee', 2.78)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 4: Farmer's Market Cold Brew -->
+          <div class="keke-card" data-category="coffee" data-name="farmer's market cold brew">
+            <div class="keke-card-img-wrap">
+              <img src="images/Cold Brew.avif" alt="Farmer's Market Cold Brew" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <span class="keke-badge-new">NEW</span>
+              <h4 class="keke-item-title">COLD BREW</h4>
+            </div>
+            <div class="keke-cal-subtext">15 cal</div>
+            <p class="keke-item-desc">Slow steeped for 18 hours for a bold, chocolatey, low-acid coffee finish.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$5.56</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Farmer\'s Market Cold Brew', 5.56)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 5: Barrel of Coffee -->
+          <div class="keke-card" data-category="coffee" data-name="barrel of coffee">
+            <div class="keke-card-img-wrap">
+              <img src="images/barrel of coffee.avif" alt="Barrel of Coffee" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">BARREL OF COFFEE</h4>
+            </div>
+            <div class="keke-cal-subtext">120 cal</div>
+            <p class="keke-item-desc">Bulk 96oz portable coffee container for group meetings &amp; gatherings.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$16.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Barrel of Coffee (96oz)', 16.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 6: Hot Chocolate -->
+          <div class="keke-card" data-category="cold" data-name="hot chocolate">
+            <div class="keke-card-img-wrap">
+              <img src="images/Hot Chocolate.avif" alt="Hot Chocolate" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">HOT CHOCOLATE</h4>
+            </div>
+            <div class="keke-cal-subtext">280 cal</div>
+            <p class="keke-item-desc">Rich cocoa steamed with whole milk and topped with fluffy marshmallows.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$2.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Hot Chocolate', 2.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 7: Tea -->
+          <div class="keke-card" data-category="cold" data-name="tea">
+            <div class="keke-card-img-wrap">
+              <img src="images/artisnal tea.avif" alt="Artisanal Tea" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">ARTISANAL TEA</h4>
+            </div>
+            <div class="keke-cal-subtext">0 cal</div>
+            <p class="keke-item-desc">Selection of loose-leaf herbal, green, black, and Earl Grey teas.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$2.00 – $3.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Artisanal Tea', 2.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 8: Sparkling Water -->
+          <div class="keke-card" data-category="cold" data-name="sparkling water">
+            <div class="keke-card-img-wrap">
+              <div class="keke-placeholder-overlay"><i class="fa-solid fa-bottle-water"></i><span>Sparkling Water</span></div>
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">SPARKLING WATER</h4>
+            </div>
+            <div class="keke-cal-subtext">0 cal</div>
+            <p class="keke-item-desc">Chilled sparkling mineral water with natural effervescence.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$1.25</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Sparkling Water', 1.25)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 9: Chocolate Milk -->
+          <div class="keke-card" data-category="cold" data-name="chocolate milk">
+            <div class="keke-card-img-wrap">
+              <img src="images/chocolate milk.avif" alt="Chocolate Milk" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">CHOCOLATE MILK</h4>
+            </div>
+            <div class="keke-cal-subtext">210 cal</div>
+            <p class="keke-item-desc">Creamy cold milk blended with sweet Dutch cocoa chocolate syrup.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$2.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Chocolate Milk', 2.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 10: Lemonade -->
+          <div class="keke-card" data-category="cold" data-name="lemonade">
+            <div class="keke-card-img-wrap">
+              <img src="images/lemonade.avif" alt="Fresh Lemonade" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">LEMONADE</h4>
+            </div>
+            <div class="keke-cal-subtext">160 cal</div>
+            <p class="keke-item-desc">House-squeezed fresh lemons sweet juice served ice cold.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$4.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Fresh Lemonade', 4.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 11: Farmers Market Apple Cider -->
+          <div class="keke-card" data-category="cold" data-name="farmers market apple cider">
+            <div class="keke-card-img-wrap">
+              <img src="images/apple cider.avif" alt="Farmers Market Apple Cider" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">APPLE CIDER</h4>
+            </div>
+            <div class="keke-cal-subtext">140 cal</div>
+            <p class="keke-item-desc">Locally pressed Ohio apple cider served warm or chilled with cinnamon.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$2.78</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Farmers Market Apple Cider', 2.78)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 12: Snapple Tea -->
+          <div class="keke-card" data-category="cold" data-name="snapple tea">
+            <div class="keke-card-img-wrap">
+              <img src="images/snapple tea.avif" alt="Snapple Tea" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">SNAPPLE TEA</h4>
+            </div>
+            <div class="keke-cal-subtext">150 cal</div>
+            <p class="keke-item-desc">Classic bottled Snapple iced tea varieties.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$2.50</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Snapple Tea', 2.50)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 13: Muffin -->
+          <div class="keke-card" data-category="bakery" data-name="muffin">
+            <div class="keke-card-img-wrap">
+              <img src="images/blueberry_muffin.png" alt="Muffin" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <span class="keke-badge-new">NEW</span>
+              <h4 class="keke-item-title">BAKERY MUFFIN</h4>
+            </div>
+            <div class="keke-cal-subtext">420 cal</div>
+            <p class="keke-item-desc">Handcrafted daily by Hunny Bunny Bakery (Blueberry, Chocolate Chip).</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$4.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Fresh Bakery Muffin', 4.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 14: Apple Danish -->
+          <div class="keke-card" data-category="bakery" data-name="apple danish">
+            <div class="keke-card-img-wrap">
+              <div class="keke-placeholder-overlay"><i class="fa-solid fa-bread-slice"></i><span>Apple Danish</span></div>
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">APPLE DANISH</h4>
+            </div>
+            <div class="keke-cal-subtext">360 cal</div>
+            <p class="keke-item-desc">Flaky puff pastry filled with spiced Cleveland apples and sweet glaze.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$5.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Apple Danish', 5.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 15: Breakfast Sandwiches -->
+          <div class="keke-card" data-category="bakery" data-name="breakfast sandwiches">
+            <div class="keke-card-img-wrap">
+              <img src="images/sandwich.avif" alt="Breakfast Sandwich" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <span class="keke-badge-new">NEW</span>
+              <h4 class="keke-item-title">BREAKFAST SANDWICH</h4>
+            </div>
+            <div class="keke-cal-subtext">510 cal</div>
+            <p class="keke-item-desc">Warm brioche sandwich with egg, cheddar cheese, and bacon or sausage.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$6.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Breakfast Sandwich', 6.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 16: Brownie -->
+          <div class="keke-card" data-category="bakery" data-name="brownie">
+            <div class="keke-card-img-wrap">
+              <img src="images/brownie.avif" alt="Fudgy Brownie" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">FUDGY BROWNIE</h4>
+            </div>
+            <div class="keke-cal-subtext">390 cal</div>
+            <p class="keke-item-desc">Fudgy dark chocolate brownie baked fresh in-house daily.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$3.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Fudgy Brownie', 3.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 17: Cookies -->
+          <div class="keke-card" data-category="bakery" data-name="cookies">
+            <div class="keke-card-img-wrap">
+              <div class="keke-placeholder-overlay"><i class="fa-solid fa-cookie"></i><span>Cookies</span></div>
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">COOKIES</h4>
+            </div>
+            <div class="keke-cal-subtext">240 cal</div>
+            <p class="keke-item-desc">Soft-baked chocolate chip, oatmeal raisin, and peanut butter cookies.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$2.50</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Handcrafted Cookie', 2.50)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 18: 12 oz Coffee Bag -->
+          <div class="keke-card" data-category="beans" data-name="12 oz coffee bag">
+            <div class="keke-card-img-wrap">
+              <img src="images/craft_coffee_bag.png" alt="12 oz Coffee Bag" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <span class="keke-badge-new">NEW</span>
+              <h4 class="keke-item-title">12 OZ COFFEE BAG</h4>
+            </div>
+            <div class="keke-cal-subtext">Whole Bean</div>
+            <p class="keke-item-desc">Signature house roast whole bean coffee bag (17-21 servings).</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$14.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('12 oz Coffee Bag', 14.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 19: One Pound Coffee Bag -->
+          <div class="keke-card" data-category="beans" data-name="one pound coffee bag">
+            <div class="keke-card-img-wrap">
+              <img src="images/aura_coffee_bags.png" alt="1 lb Coffee Bag" class="keke-card-img">
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">1 LB COFFEE BAG</h4>
+            </div>
+            <div class="keke-cal-subtext">16 oz Whole Bean</div>
+            <p class="keke-item-desc">Full 1 lb bag of our freshly roasted signature coffee beans.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$19.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('1 lb Coffee Bag (16oz)', 19.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 20: Tropical T-Shirt -->
+          <div class="keke-card" data-category="merch" data-name="tropical t-shirt">
+            <div class="keke-card-img-wrap">
+              <div class="keke-placeholder-overlay"><i class="fa-solid fa-shirt"></i><span>Tropical T-Shirt</span></div>
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">TROPICAL T-SHIRT</h4>
+            </div>
+            <div class="keke-cal-subtext">Official Merch</div>
+            <p class="keke-item-desc">Soft cotton graphic tee with official The Tropical Coffee House logo print.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$12.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Tropical T-Shirt', 12.00)">+ Add</button>
+            </div>
+          </div>
+
+          <!-- ITEM 21: Gift Card -->
+          <div class="keke-card" data-category="merch" data-name="gift card">
+            <div class="keke-card-img-wrap">
+              <div class="keke-placeholder-overlay"><i class="fa-solid fa-credit-card"></i><span>Gift Card</span></div>
+            </div>
+            <div class="keke-title-row">
+              <h4 class="keke-item-title">GIFT CARD</h4>
+            </div>
+            <div class="keke-cal-subtext">Digital / Physical</div>
+            <p class="keke-item-desc">Give the gift of great coffee and hope in Cleveland.</p>
+            <div class="keke-card-footer">
+              <span class="keke-item-price">$10.00</span>
+              <button class="keke-add-btn" onclick="app.quickAdd('Tropical Gift Card', 10.00)">+ Add</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand-logo">
+            <img src="images/tropical_logo.png" alt="The Tropical Coffee House Logo" class="footer-logo-img">
+            <span>The Tropical Coffee House</span>
+          </div>
+          <h3 class="footer-tagline">Coffee &amp; Hope Made<br>Just Right.</h3>
+
+          <div class="newsletter-cta-box">
+            <button class="btn-exact btn-newsletter-orange" id="btn-subscribe">FRESHEN UP YOUR INBOX &rarr;</button>
+            <p class="newsletter-subcaption">Join our eClub for the latest updates &amp; offers.</p>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <div class="footer-links-grid">
+            <div class="footer-link-group">
+              <a href="index.html#location">FIND A CAFE</a>
+              <a href="index.html#location">ALL LOCATIONS</a>
+              <a href="menu.html">CATERING</a>
+              <a href="menu.html">GIFT CARDS</a>
+              <a href="menu.html">MENU</a>
+            </div>
+
+            <div class="footer-link-group">
+              <a href="index.html#location">CONTACT</a>
+            </div>
+          </div>
+
+          <div class="footer-mid-divider"></div>
+
+          <div class="footer-secondary-links">
+            <a href="#">Allergen Guide</a>
+            <a href="#">Media &amp; PR</a>
+            <a href="#">Franchising</a>
+            <a href="#">Real Estate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-divider"></div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-copyright">
+          &copy; 2026 The Tropical Coffee House. All Rights Reserved.
+        </div>
+
+        <div class="footer-legal-links">
+          <a href="#">Accessibility</a>
+          <a href="#">Privacy and Cookies</a>
+          <a href="#">Terms and Conditions</a>
+        </div>
+
+        <div class="footer-social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE CART DRAWER -->
+  <div class="cart-drawer-overlay" id="drawer-overlay"></div>
+  <aside class="cart-drawer-content" id="cart-drawer">
+    <div class="drawer-header">
+      <h3 style="font-family:var(--font-serif); font-size:1.2rem;"><i class="fa-solid fa-mug-hot"></i> Online Menu & Order</h3>
+      <button id="close-drawer-btn" style="color:#FFF; font-size:1.4rem;">&times;</button>
+    </div>
+
+    <div class="drawer-body" id="drawer-body">
+      <h4 style="margin-bottom:1rem; color:var(--text-dark);">Your Cart (<span id="cart-count">0</span>)</h4>
+      <div id="cart-items-list" style="margin-bottom:1.5rem;">
+        <p style="color:var(--text-body); font-size:0.9rem;">Your cart is empty. Click an item to add!</p>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div style="display:flex; justify-content:space-between; font-weight:800; font-size:1.1rem; margin-bottom:1rem;">
+        <span>Total:</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="btn-exact btn-solid-dark" style="width:100%;" onclick="app.checkout()">PLACE PICKUP ORDER</button>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+  <script>
+    // Category Button Filtering (Starts with Espresso & Coffee)
+    const catButtons = document.querySelectorAll('.keke-cat-btn');
+    const allCards = document.querySelectorAll('.keke-card');
+    const searchInput = document.getElementById('menu-search-input');
+
+    function applyCategoryFilter(filter) {
+      allCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    applyCategoryFilter('coffee');
+
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyCategoryFilter(btn.dataset.filter);
+      });
+    });
+
+    // Real-time Search Input Filtering
+    searchInput?.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      allCards.forEach(card => {
+        const itemName = card.dataset.name || '';
+        if (itemName.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
