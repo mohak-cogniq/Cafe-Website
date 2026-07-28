@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tropical Coffee House | Cleveland, OH</title>
+  <meta name="description" content="Locally-Owned Coffee Shop Serving Cleveland. Brewing Hope & Great Coffee in the heart of Buckeye at The Tropical Coffee House.">
+  
+  <!-- FontAwesome & Custom Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SITE HEADER - NON-STICKY RELATIVE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-emblem">
+        <img src="images/tropical_logo.png" alt="The Tropical Coffee House Logo" class="header-logo-img">
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link active">HOME</a></li>
+        <li><a href="#menu" class="nav-link">FULL MENU</a></li>
+        <li><a href="#story" class="nav-link">OUR STORY</a></li>
+        <li><a href="#roastery" class="nav-link">THE DRIP <i class="fa-solid fa-chevron-down" style="font-size:0.7rem; margin-left:2px;"></i></a></li>
+        <li><a href="#bakery" class="nav-link">BAKERY</a></li>
+        <li><a href="#location" class="nav-link">HOURS &amp; LOCATION</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="btn-exact btn-outline-dark" id="btn-header-order-online" style="padding: 0.5rem 1.1rem; font-size: 0.8rem; text-transform: uppercase;">ORDER ONLINE</button>
+        <button class="cart-btn-nav" id="nav-cart-btn" aria-label="Open Order Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cart-badge-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION - EXACT SCREENSHOT MATCH -->
+    <section class="hero-exact" id="hero">
+      <div class="container hero-exact-grid">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Locally-Owned Coffee Shop Serving Cleveland</span>
+          <h1 class="hero-headline">
+            Brewing Hope &<br>
+            Great Coffee in the<br>
+            heart of Buckeye
+          </h1>
+
+          <p class="hero-paragraph">
+            Once a bar, now a beacon of ambition —<strong>The Tropical Coffee House</strong> is a unique & eclectic café revitalizing the Buckeye-Shaker neighborhood through <strong>community</strong>, <strong>careers</strong>, and <strong>coffee</strong>.
+          </p>
+
+          <div class="hero-hours">
+            Open 8am – 1pm Monday-Friday
+          </div>
+
+          <div class="hero-btn-row">
+            <button class="btn-exact btn-outline-dark" id="btn-order-ahead">Order Ahead &rarr;</button>
+            <button class="btn-exact btn-solid-dark" id="btn-our-menu">Our Menu &rarr;</button>
+          </div>
+        </div>
+
+        <div class="hero-cup-wrap">
+          <!-- Background Seal Watermark -->
+          <svg class="watermark-seal" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="250" cy="250" r="230" stroke="#332420" stroke-width="6" stroke-dasharray="12 12"/>
+            <circle cx="250" cy="250" r="210" stroke="#332420" stroke-width="3"/>
+            <path id="curve" d="M 75, 250 A 175,175 0 1,1 425,250" fill="none"/>
+            <text fill="#332420" font-family="Georgia" font-size="26" font-weight="bold" letter-spacing="3">
+              <textPath href="#curve" startOffset="50%" text-anchor="middle">THE TROPICAL COFFEE HOUSE</textPath>
+            </text>
+          </svg>
+
+          <!-- White Coffee Cup Image -->
+          <img src="images/coffee_cup_saucer.png" alt="White Coffee Cup on Saucer" width="440" height="340">
+        </div>
+      </div>
+
+      <!-- BOTTOM ROASTED COFFEE BEANS DIVIDER BANNER -->
+      <img src="images/coffee_beans_banner.png" alt="Roasted Coffee Beans Pile Divider" class="coffee-beans-bottom-strip">
+    </section>
+
+    <!-- SECTION 2: SERVING UP SOMETHING FOR EVERYONE - 1:1 SCREENSHOT MATCH -->
+    <section class="section-dark" id="menu">
+      <div class="container section-dark-grid">
+        <!-- Left Column Content -->
+        <div class="section-dark-left">
+          <span class="hero-eyebrow" style="color:var(--bg-copper); font-size:1rem; font-weight:700;">Featured Special</span>
+          <h2 class="hero-headline" style="color:#FFF; font-size:3.2rem; margin-bottom:1.5rem; line-height:1.15;">
+            Serving up Something<br>for Everyone.
+          </h2>
+          <p style="color:var(--text-muted-light); font-size:1.05rem; line-height:1.65; margin-bottom:2rem; max-width:500px;">
+            From bold brews to sweet sips, every drink at The Tropical Coffee House is crafted with care and community in mind. Whether you're grabbing your go-to latte or trying something new like our signature in-house roasted beans, or delicious pastries from Hunny Bunny Bakery, there's something on the menu to make everyone feel at home.
+          </p>
+
+          <button class="btn-exact btn-pickup-visible" id="btn-start-pickup">Start a Pickup Order &rarr;</button>
+        </div>
+
+        <!-- Right Column Overlapping Card with White Circular Cappuccino Badge -->
+        <div class="featured-card-wrapper">
+          <div class="featured-card-header-band">
+            <div class="latte-circle-badge">
+              <img src="images/latte_art_cup.png" alt="The Tropical Favorite Signature Latte Art" class="featured-latte-img">
+            </div>
+          </div>
+          <div class="featured-card-body">
+            <h3 class="featured-card-italic-title">The "Tropical's Favorite" Signature Latte</h3>
+            <div class="featured-card-price">$5.00</div>
+            <div class="featured-card-caffeine"><i class="fa-solid fa-mug-hot"></i> Caffeine Level 100 mg</div>
+            <p class="featured-card-subdesc">Our strong latte with any available syrup.<br>We got you.</p>
+            <a href="#" class="featured-card-link" id="link-card-order">Order Ahead &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: GRAB A BAG OF OUR BEST BREW - 1:1 SCREENSHOT MATCH -->
+    <section class="section-medium" id="roastery">
+      <!-- Subtle Coffee Beans Watermark Pattern -->
+      <div class="beans-pattern-bg"></div>
+
+      <div class="container section-medium-grid">
+        <!-- Left Column: Craft Coffee Bag Image -->
+        <div class="section-medium-left">
+          <img src="images/craft_coffee_bag.png" alt="Craft Coffee Bag" class="craft-bag-hero-img">
+        </div>
+
+        <!-- Right Column: Content & Order Button -->
+        <div class="section-medium-right">
+          <h2 class="section-medium-italic-title">Grab a Bag of our<br>Best Brew!</h2>
+
+          <p class="section-medium-desc">
+            Take a piece of The Tropical Coffee House home with you. Every 12oz bag of our in-house roasted signature coffee fuels more than your morning — it powers job training, mentorship, and hope right here in Buckeye. <strong>Brew boldly. Give generously.</strong>
+          </p>
+
+          <div class="section-medium-divider-box">
+            <span class="servings-info"><i class="fa-solid fa-mug-hot"></i> 12 oz bag &bull; 17-21 Servings</span>
+          </div>
+
+          <button class="btn-exact btn-copper-order" id="btn-buy-bag">$14 | Order Today &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: BAKERY & FRESH TREATS - 1:1 SCREENSHOT MATCH -->
+    <section class="section-cream" id="bakery">
+      <!-- Coffee Doodles Watermark Background Pattern -->
+      <div class="bakery-doodle-bg"></div>
+
+      <div class="container section-cream-grid">
+        <!-- Left Column Content -->
+        <div class="section-cream-left">
+          <span class="bakery-eyebrow">Baked Goods, Pastries, & Sandwiches</span>
+          <h2 class="bakery-headline">
+            Better Together: The<br>
+            Tropical &times; Hunny<br>
+            Bunny's Bakery
+          </h2>
+          <p class="bakery-desc">
+            Every pastry we serve is handcrafted by Hunny Bunny Bakery, a local gem we're proud to support. It's a sweet partnership that supports local business and builds up Buckeye—one bite at a time. It's more than a treat—it's a taste of Buckeye's small business spirit, made fresh just for you.
+          </p>
+          <button class="btn-exact btn-solid-dark" id="btn-order-bakery">Order Now &rarr;</button>
+        </div>
+
+        <!-- Right Column: Blueberry Muffin with Splash Image -->
+        <div class="section-cream-right">
+          <img src="images/blueberry_muffin.png" alt="Fresh Blueberry Muffin with Chocolate Splash" class="muffin-splash-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION SECTION WITH WAVY TOP & MAP - BURGUNDY WINE COFFEE VIBE -->
+    <section class="section-location-burgundy" id="location">
+      <!-- Wavy Top Divider -->
+      <div class="wavy-top-divider">
+        <svg viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z" fill="#5C2528"></path>
+        </svg>
+      </div>
+
+      <div class="container location-burgundy-inner">
+        <!-- Circular Badge Watermark Seal -->
+        <svg class="badge-seal-right" viewBox="0 0 200 200">
+          <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none" />
+          <text fill="rgba(255,255,255,0.3)" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" letter-spacing="3">
+            <textPath href="#circlePath">MADE TO ORDER &bull; FRESH EVERY MORNING &bull;</textPath>
+          </text>
+        </svg>
+
+        <h2 class="location-headline">
+          Come on in—<br>
+          we saved you a seat.
+        </h2>
+
+        <p class="location-subtext">
+          Find your nearest Tropical Coffee House and join us for coffee made just right.
+        </p>
+
+        <div class="location-btn-group">
+          <a href="#map-container" class="btn-exact btn-outline-white">FIND A CAFE</a>
+          <button class="btn-exact btn-accent-orange" id="btn-location-start-order">START ORDER</button>
+        </div>
+
+        <!-- Google Maps Embed Container -->
+        <div class="google-map-wrapper" id="map-container">
+          <iframe 
+            src="https://maps.google.com/maps?q=12302+Buckeye+Rd,+Cleveland,+OH+44120&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="360" 
+            style="border:0; border-radius:12px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER - SCREENSHOT MATCH WITH LIGHTER WARM CHARCOAL TONE -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <!-- TOP ROW: BRAND & NEWSLETTER (LEFT) + NAVIGATION (RIGHT) -->
+      <div class="footer-top-grid">
+        <!-- LEFT COLUMN: BRAND & NEWSLETTER -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-logo">
+            <img src="images/tropical_logo.png" alt="The Tropical Coffee House Logo" class="footer-logo-img">
+            <span>The Tropical Coffee House</span>
+          </div>
+          <h3 class="footer-tagline">Coffee &amp; Hope Made<br>Just Right.</h3>
+
+          <div class="newsletter-cta-box">
+            <button class="btn-exact btn-newsletter-orange" id="btn-subscribe">FRESHEN UP YOUR INBOX &rarr;</button>
+            <p class="newsletter-subcaption">Join our eClub for the latest updates &amp; offers.</p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: 2-COLUMN NAV LINKS + MIDDLE LINKS -->
+        <div class="footer-nav-col">
+          <div class="footer-links-grid">
+            <div class="footer-link-group">
+              <a href="#location">FIND A CAFE</a>
+              <a href="#location">ALL LOCATIONS</a>
+              <a href="#menu">CATERING</a>
+              <a href="#menu">GIFT CARDS</a>
+              <a href="#menu">MENU</a>
+            </div>
+
+            <div class="footer-link-group">
+              <a href="#story">OUR COMPANY</a>
+              <a href="#story">PRESS</a>
+              <a href="#story">CAREERS</a>
+              <a href="#location">CONTACT</a>
+              <a href="#story">FRANCHISING</a>
+            </div>
+          </div>
+
+          <div class="footer-mid-divider"></div>
+
+          <div class="footer-secondary-links">
+            <a href="#">Allergen Guide</a>
+            <a href="#">Media &amp; PR</a>
+            <a href="#">Franchising</a>
+            <a href="#">Real Estate</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FULL-WIDTH DIVIDER -->
+      <div class="footer-bottom-divider"></div>
+
+      <!-- BOTTOM ROW: COPYRIGHT + LEGAL LINKS + SOCIAL ICONS -->
+      <div class="footer-bottom-row">
+        <div class="footer-copyright">
+          &copy; 2026 The Tropical Coffee House. All Rights Reserved.
+        </div>
+
+        <div class="footer-legal-links">
+          <a href="#">Accessibility</a>
+          <a href="#">Privacy and Cookies</a>
+          <a href="#">Terms and Conditions</a>
+        </div>
+
+        <div class="footer-social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE DRAWER FOR ONLINE MENU & ORDERING -->
+  <div class="cart-drawer-overlay" id="drawer-overlay"></div>
+  <aside class="cart-drawer-content" id="cart-drawer">
+    <div class="drawer-header">
+      <h3 style="font-family:var(--font-serif); font-size:1.2rem;"><i class="fa-solid fa-mug-hot"></i> Online Menu & Order</h3>
+      <button id="close-drawer-btn" style="color:#FFF; font-size:1.4rem;">&times;</button>
+    </div>
+
+    <div class="drawer-body" id="drawer-body">
+      <h4 style="margin-bottom:1rem; color:var(--text-dark);">Your Cart (<span id="cart-count">0</span>)</h4>
+      <div id="cart-items-list" style="margin-bottom:1.5rem;">
+        <p style="color:var(--text-body); font-size:0.9rem;">Your cart is empty. Click an item to add!</p>
+      </div>
+
+      <h4 style="margin-bottom:0.8rem; color:var(--text-dark);">Quick Menu Selection</h4>
+      <div style="display:flex; flex-direction:column; gap:0.8rem;">
+        <div style="background:var(--bg-card-cream); padding:0.8rem; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong>The "Tropical's Favorite" Signature Latte</strong>
+            <div style="font-size:0.8rem; color:var(--text-body);">$5.00 &bull; 100mg Caffeine</div>
+          </div>
+          <button class="btn-exact" style="background:var(--bg-copper); color:#FFF; padding:0.35rem 0.8rem; font-size:0.75rem;" onclick="app.quickAdd('The Tropical Favorite Signature Latte', 5.00)">+ Add</button>
+        </div>
+
+        <div style="background:var(--bg-card-cream); padding:0.8rem; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong>Buckeye Cold Brew</strong>
+            <div style="font-size:0.8rem; color:var(--text-body);">$4.25 &bull; 18-hr Steeped</div>
+          </div>
+          <button class="btn-exact" style="background:var(--bg-copper); color:#FFF; padding:0.35rem 0.8rem; font-size:0.75rem;" onclick="app.quickAdd('Buckeye Cold Brew', 4.25)">+ Add</button>
+        </div>
+
+        <div style="background:var(--bg-card-cream); padding:0.8rem; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong>Hunny Bunny Bakery Pastry</strong>
+            <div style="font-size:0.8rem; color:var(--text-body);">$3.75 &bull; Blueberry Muffin</div>
+          </div>
+          <button class="btn-exact" style="background:var(--bg-copper); color:#FFF; padding:0.35rem 0.8rem; font-size:0.75rem;" onclick="app.quickAdd('Hunny Bunny Bakery Pastry', 3.75)">+ Add</button>
+        </div>
+
+        <div style="background:var(--bg-card-cream); padding:0.8rem; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong>Buckeye Roast Whole Bean 12oz</strong>
+            <div style="font-size:0.8rem; color:var(--text-body);">$14.00 &bull; 12oz Signature Bag</div>
+          </div>
+          <button class="btn-exact" style="background:var(--bg-copper); color:#FFF; padding:0.35rem 0.8rem; font-size:0.75rem;" onclick="app.quickAdd('Buckeye Roast Whole Bean 12oz', 14.00)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div style="display:flex; justify-content:space-between; font-weight:800; font-size:1.1rem; margin-bottom:1rem;">
+        <span>Total:</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="btn-exact btn-solid-dark" style="width:100%;" onclick="app.checkout()">PLACE PICKUP ORDER</button>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
