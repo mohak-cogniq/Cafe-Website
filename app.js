@@ -96,7 +96,9 @@ class TropicalLandingApp {
 
     if (!triggerBtn || !modal) return;
 
-    this.geminiApiKey = "AIzaSyBfR0a2BXQBP9C3-2vYv_vsAwkM-DlNSCU";
+    // Load API Key from Environment Variables
+    this.geminiApiKey = (typeof window !== 'undefined' && window.ENV && window.ENV.GEMINI_API_KEY) ||
+                        (typeof process !== 'undefined' && process.env && process.env.GEMINI_API_KEY) || "";
     this.systemPromptText = `You are BrewSmith AI, an enthusiastic, friendly, and helpful AI assistant for The Tropical Coffee House located in Cleveland, OH.
 
 CAFE KNOWLEDGE BASE:
