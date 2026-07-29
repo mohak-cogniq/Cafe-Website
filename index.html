@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <div class="hero-cup-wrap">
+        <div class="hero-cup-wrap reveal reveal-right reveal-delay-1">
           <!-- Background Seal Watermark -->
           <svg class="watermark-seal" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="250" cy="250" r="230" stroke="#332420" stroke-width="6" stroke-dasharray="12 12"/>
@@ -86,7 +86,7 @@
     <section class="section-dark" id="menu">
       <div class="container section-dark-grid">
         <!-- Left Column Content -->
-        <div class="section-dark-left">
+        <div class="section-dark-left reveal reveal-left">
           <span class="hero-eyebrow" style="color:var(--bg-copper); font-size:1rem; font-weight:700;">Featured Special</span>
           <h2 class="hero-headline" style="color:#FFF; font-size:3.2rem; margin-bottom:1.5rem; line-height:1.15;">
             Serving up Something<br>for Everyone.
@@ -99,7 +99,7 @@
         </div>
 
         <!-- Right Column Overlapping Card with White Circular Cappuccino Badge -->
-        <div class="featured-card-wrapper">
+        <div class="featured-card-wrapper reveal reveal-right reveal-delay-1">
           <div class="featured-card-header-band">
             <div class="latte-circle-badge">
               <img src="images/latte_art_cup.png" alt="The Tropical Favorite Signature Latte Art" class="featured-latte-img">
@@ -123,12 +123,12 @@
 
       <div class="container section-medium-grid">
         <!-- Left Column: Craft Coffee Bag Image -->
-        <div class="section-medium-left">
+        <div class="section-medium-left reveal reveal-left">
           <img src="images/craft_coffee_bag.png" alt="Craft Coffee Bag" class="craft-bag-hero-img">
         </div>
 
         <!-- Right Column: Content & Order Button -->
-        <div class="section-medium-right">
+        <div class="section-medium-right reveal reveal-right reveal-delay-1">
           <h2 class="section-medium-italic-title">Grab a Bag of our<br>Best Brew!</h2>
 
           <p class="section-medium-desc">
@@ -151,7 +151,7 @@
 
       <div class="container section-cream-grid">
         <!-- Left Column Content -->
-        <div class="section-cream-left">
+        <div class="section-cream-left reveal reveal-left">
           <span class="bakery-eyebrow">Baked Goods, Pastries, & Sandwiches</span>
           <h2 class="bakery-headline">
             Better Together: The<br>
@@ -165,7 +165,7 @@
         </div>
 
         <!-- Right Column: Blueberry Muffin with Splash Image -->
-        <div class="section-cream-right">
+        <div class="section-cream-right reveal reveal-right reveal-delay-1">
           <img src="images/blueberry_muffin.png" alt="Fresh Blueberry Muffin with Chocolate Splash" class="muffin-splash-img">
         </div>
       </div>
@@ -189,18 +189,37 @@
           </text>
         </svg>
 
-        <h2 class="location-headline">
+        <h2 class="location-headline reveal">
           Come on in—<br>
           we saved you a seat.
         </h2>
 
-        <p class="location-subtext">
+        <p class="location-subtext reveal reveal-delay-1">
           Find your nearest Tropical Coffee House and join us for coffee made just right.
         </p>
 
-        <div class="location-btn-group">
+        <div class="location-btn-group reveal reveal-delay-2">
           <a href="#map-container" class="btn-exact btn-outline-white">FIND A CAFE</a>
           <button class="btn-exact btn-accent-orange" id="btn-location-start-order">START ORDER</button>
+        </div>
+
+        <!-- Address & Working Hours Quick-Info Grid -->
+        <div class="location-info-grid reveal reveal-delay-2">
+          <div class="location-info-item">
+            <i class="fa-solid fa-location-dot location-info-icon"></i>
+            <div class="location-info-text-group">
+              <span class="location-info-label">OUR ADDRESS</span>
+              <span class="location-info-val">12302 Buckeye Rd, Cleveland, OH 44120</span>
+            </div>
+          </div>
+
+          <div class="location-info-item">
+            <i class="fa-solid fa-clock location-info-icon"></i>
+            <div class="location-info-text-group">
+              <span class="location-info-label">WORKING HOURS</span>
+              <span class="location-info-val">Mon&ndash;Fri: 6 AM &ndash; 7 PM &bull; Sat&ndash;Sun: 7 AM &ndash; 6 PM</span>
+            </div>
+          </div>
         </div>
 
         <!-- Google Maps Embed Container -->
@@ -208,7 +227,7 @@
           <iframe 
             src="https://maps.google.com/maps?q=12302+Buckeye+Rd,+Cleveland,+OH+44120&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
-            height="360" 
+            height="230" 
             style="border:0; border-radius:12px;" 
             allowfullscreen="" 
             loading="lazy" 
@@ -219,26 +238,33 @@
     </section>
   </main>
 
-  <!-- SITE FOOTER - SCREENSHOT MATCH WITH LIGHTER WARM CHARCOAL TONE -->
+  <!-- SITE FOOTER - COMPACT ELEVATED DESIGN WITH SOCIAL ICONS -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <!-- TOP ROW: BRAND & NEWSLETTER (LEFT) + NAVIGATION (RIGHT) -->
       <div class="footer-top-grid">
-        <!-- LEFT COLUMN: BRAND & NEWSLETTER -->
+        <!-- LEFT COLUMN: BRAND, NEWSLETTER & SOCIAL -->
         <div class="footer-brand-col">
           <div class="footer-brand-logo">
             <img src="images/tropical_logo.png" alt="The Tropical Coffee House Logo" class="footer-logo-img">
             <span>The Tropical Coffee House</span>
           </div>
-          <h3 class="footer-tagline">Coffee &amp; Hope Made<br>Just Right.</h3>
+          <h3 class="footer-tagline">Coffee &amp; Hope Made Just Right.</h3>
 
           <div class="newsletter-cta-box">
             <button class="btn-exact btn-newsletter-orange" id="btn-subscribe">FRESHEN UP YOUR INBOX &rarr;</button>
             <p class="newsletter-subcaption">Join our eClub for the latest updates &amp; offers.</p>
           </div>
+
+          <div class="footer-social-inline">
+            <span class="footer-social-label">Follow Us:</span>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
         </div>
 
-        <!-- RIGHT COLUMN: 2-COLUMN NAV LINKS + MIDDLE LINKS -->
+        <!-- RIGHT COLUMN: 2-COLUMN NAV LINKS + SECONDARY LINKS -->
         <div class="footer-nav-col">
           <div class="footer-links-grid">
             <div class="footer-link-group">
@@ -250,7 +276,10 @@
             </div>
 
             <div class="footer-link-group">
-              <a href="#location">CONTACT</a>
+              <a href="#location">CONTACT US</a>
+              <a href="#bakery">BAKERY PARTNERS</a>
+              <a href="menu.html">COFFEE BAGS</a>
+              <a href="#location">HOURS &amp; DIRECTIONS</a>
             </div>
           </div>
 
@@ -283,6 +312,8 @@
         <div class="footer-social-icons">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
@@ -347,6 +378,53 @@
       <button class="btn-exact btn-solid-dark" style="width:100%;" onclick="app.checkout()">PLACE PICKUP ORDER</button>
     </div>
   </aside>
+
+  <!-- AI CHATBOT TRIGGER BUTTON -->
+  <button id="ai-chatbot-btn" class="ai-chatbot-toggle-btn" aria-label="Chat with BrewSmith AI" title="Chat with BrewSmith AI">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+
+  <!-- AI CHATBOT WINDOW -->
+  <div id="ai-chatbot-window" class="ai-chatbot-modal" aria-hidden="true">
+    <div class="chatbot-header">
+      <div class="chatbot-header-title">
+        <div class="chatbot-avatar">
+          <i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <div>
+          <h4>BrewSmith AI</h4>
+          <span class="chatbot-status"><span class="status-dot"></span> Powered by Gemini 2.5 Flash</span>
+        </div>
+      </div>
+      <button id="close-chatbot-btn" class="close-chatbot-btn" aria-label="Close Chatbot">&times;</button>
+    </div>
+
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chat-msg bot-msg">
+        <div class="chat-bubble">
+          👋 Welcome to <strong>The Tropical Coffee House</strong>! I'm <strong>BrewSmith AI</strong>, your coffee expert assistant. How can I help you today?
+        </div>
+      </div>
+      <div class="chat-chips-wrap">
+        <button class="chat-chip" data-query="What is your signature drink?">☕ Signature Drink</button>
+        <button class="chat-chip" data-query="What are your working hours?">🕒 Working Hours</button>
+        <button class="chat-chip" data-query="Where are you located?">📍 Location</button>
+        <button class="chat-chip" data-query="Tell me about your bakery">🥐 Bakery Items</button>
+      </div>
+    </div>
+
+    <form class="chatbot-input-form" id="chatbot-form">
+      <input type="text" id="chatbot-input" placeholder="Ask about our coffee, menu, hours..." autocomplete="off">
+      <button type="submit" id="chatbot-send-btn" aria-label="Send Message">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <script src="app.js"></script>
 </body>

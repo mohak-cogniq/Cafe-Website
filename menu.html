@@ -418,7 +418,7 @@
     </div>
   </main>
 
-  <!-- SITE FOOTER -->
+  <!-- SITE FOOTER - COMPACT ELEVATED DESIGN WITH SOCIAL ICONS -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top-grid">
@@ -427,11 +427,18 @@
             <img src="images/tropical_logo.png" alt="The Tropical Coffee House Logo" class="footer-logo-img">
             <span>The Tropical Coffee House</span>
           </div>
-          <h3 class="footer-tagline">Coffee &amp; Hope Made<br>Just Right.</h3>
+          <h3 class="footer-tagline">Coffee &amp; Hope Made Just Right.</h3>
 
           <div class="newsletter-cta-box">
             <button class="btn-exact btn-newsletter-orange" id="btn-subscribe">FRESHEN UP YOUR INBOX &rarr;</button>
             <p class="newsletter-subcaption">Join our eClub for the latest updates &amp; offers.</p>
+          </div>
+
+          <div class="footer-social-inline">
+            <span class="footer-social-label">Follow Us:</span>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
 
@@ -446,7 +453,10 @@
             </div>
 
             <div class="footer-link-group">
-              <a href="index.html#location">CONTACT</a>
+              <a href="index.html#location">CONTACT US</a>
+              <a href="index.html#bakery">BAKERY PARTNERS</a>
+              <a href="menu.html">COFFEE BAGS</a>
+              <a href="index.html#location">HOURS &amp; DIRECTIONS</a>
             </div>
           </div>
 
@@ -477,6 +487,8 @@
         <div class="footer-social-icons">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
@@ -547,5 +559,52 @@
       });
     });
   </script>
+  <!-- AI CHATBOT TRIGGER BUTTON -->
+  <button id="ai-chatbot-btn" class="ai-chatbot-toggle-btn" aria-label="Chat with BrewSmith AI" title="Chat with BrewSmith AI">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+
+  <!-- AI CHATBOT WINDOW -->
+  <div id="ai-chatbot-window" class="ai-chatbot-modal" aria-hidden="true">
+    <div class="chatbot-header">
+      <div class="chatbot-header-title">
+        <div class="chatbot-avatar">
+          <i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <div>
+          <h4>BrewSmith AI</h4>
+          <span class="chatbot-status"><span class="status-dot"></span> Powered by Gemini 2.5 Flash</span>
+        </div>
+      </div>
+      <button id="close-chatbot-btn" class="close-chatbot-btn" aria-label="Close Chatbot">&times;</button>
+    </div>
+
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chat-msg bot-msg">
+        <div class="chat-bubble">
+          👋 Welcome to <strong>The Tropical Coffee House</strong>! I'm <strong>BrewSmith AI</strong>, your coffee expert assistant. How can I help you today?
+        </div>
+      </div>
+      <div class="chat-chips-wrap">
+        <button class="chat-chip" data-query="What is your signature drink?">☕ Signature Drink</button>
+        <button class="chat-chip" data-query="What are your working hours?">🕒 Working Hours</button>
+        <button class="chat-chip" data-query="Where are you located?">📍 Location</button>
+        <button class="chat-chip" data-query="Tell me about your bakery">🥐 Bakery Items</button>
+      </div>
+    </div>
+
+    <form class="chatbot-input-form" id="chatbot-form">
+      <input type="text" id="chatbot-input" placeholder="Ask about our coffee, menu, hours..." autocomplete="off">
+      <button type="submit" id="chatbot-send-btn" aria-label="Send Message">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
 </body>
 </html>
