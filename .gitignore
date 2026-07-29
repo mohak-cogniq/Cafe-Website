@@ -1,5 +1,12 @@
-# Ignore environment variables & secret config files
+# Secret environment files & generated runtime config (DO NOT COMMIT)
 .env
 .env.local
 .env.production
 config.js
+
+# Dependencies
+node_modules/
+
+# OS / Editor temp files
+.DS_Store
+Thumbs.db
