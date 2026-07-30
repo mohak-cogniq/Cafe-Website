@@ -215,46 +215,56 @@ Keep your answers friendly, concise, warm, and formatted nicely using HTML boldi
   }
 
   async fetchGeminiResponse(userQuery) {
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${this.geminiApiKey}`;
-
+    // 1. Try serverless proxy endpoint /api/chat (Secure production method - Hides API Key)
     try {
-      const response = await fetch(endpoint, {
+      const proxyResponse = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [{ text: this.systemPromptText }]
-          },
-          contents: [
-            {
-              role: 'user',
-              parts: [{ text: userQuery }]
-            }
-          ]
-        })
+        body: JSON.stringify({ message: userQuery })
       });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        console.error('Gemini API Error:', data);
-        const errorMsg = data.error?.message || 'API request failed';
-        return `⚠️ <strong>Gemini API Notice:</strong> ${this.escapeHTML(errorMsg)}<br><small>Using backup smart barista logic.</small><hr style="margin:0.8rem 0; border:0; border-top:1px dashed rgba(0,0,0,0.15);">${this.generateSmartBaristaAnswer(userQuery)}`;
+      if (proxyResponse.ok) {
+        const data = await proxyResponse.json();
+        if (data.reply) {
+          return this.formatMarkdown(data.reply);
+        }
+      } else {
+        const errData = await proxyResponse.json().catch(() => ({}));
+        if (errData.error) {
+          console.warn('Serverless endpoint /api/chat returned error:', errData.error);
+        }
       }
-
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (text) {
-        return this.formatMarkdown(text);
-      }
-
-      return this.generateSmartBaristaAnswer(userQuery);
-
-    } catch (err) {
-      console.error('Gemini API Fetch Exception:', err);
-      return this.generateSmartBaristaAnswer(userQuery);
+    } catch (proxyErr) {
+      console.warn('Serverless endpoint /api/chat unreachable, trying fallbacks.', proxyErr);
     }
+
+    // 2. Direct client key fallback (For local standalone testing if window.ENV key is set)
+    if (this.geminiApiKey) {
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${this.geminiApiKey}`;
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: this.systemPromptText }] },
+            contents: [{ role: 'user', parts: [{ text: userQuery }] }]
+          })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (text) return this.formatMarkdown(text);
+        }
+      } catch (err) {
+        console.error('Direct Gemini API Fetch Exception:', err);
+      }
+    }
+
+    // 3. Smart Barista offline/fallback answer
+    return this.generateSmartBaristaAnswer(userQuery);
   }
 
   generateSmartBaristaAnswer(query) {

@@ -1,15 +1,9 @@
 const fs = require('fs');
 
-// Read GEMINI_API_KEY from environment or fallback to default key
-const apiKey = process.env.GEMINI_API_KEY
-const grokKey = process.env.GROK_API_KEY
-
-const fileContent = `/* Auto-generated environment configuration for browser runtime */
-window.ENV = window.ENV || {
-  GEMINI_API_KEY: "${apiKey}",
-  GROK_API_KEY: "${grokKey}"
-};
+// Safe build script for browser deployment
+const fileContent = `/* Safe environment configuration placeholder for browser runtime */
+window.ENV = window.ENV || {};
 `;
 
 fs.writeFileSync('config.js', fileContent, 'utf8');
-console.log('Successfully generated config.js for browser deployment.');
+console.log('Successfully generated safe config.js placeholder for browser deployment.');
