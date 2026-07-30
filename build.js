@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-// Read GEMINI_API_KEY from environment variable
-const apiKey = process.env.GEMINI_API_KEY || '';
-const grokKey = process.env.GROK_API_KEY || '';
+// Read GEMINI_API_KEY from environment or fallback to default key
+const apiKey = process.env.GEMINI_API_KEY
+const grokKey = process.env.GROK_API_KEY
 
 const fileContent = `/* Auto-generated environment configuration for browser runtime */
 window.ENV = window.ENV || {
